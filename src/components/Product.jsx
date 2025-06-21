@@ -69,7 +69,7 @@ const [price , setPrice] = useState(500)
         <div className="mb-6">
         <div className="flex flex-col gap-2 text-white text-sm sm:text-base">
           <label className="flex items-center gap-2">
-            <input onClick={AllHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            <input onClick={AllHandlerFn} type="radio"  name="category" defaultChecked className="accent-blue-500" />
             All
           </label>
           <label className="flex items-center gap-2">
