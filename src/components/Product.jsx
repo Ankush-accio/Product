@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import {useNavigate} from "react-router-dom"
+import {useSelector , useDispatch} from "react-redux"
+import { addToCart } from '../utils/ProductSlice'
 
+const Poroduct = () => { 
+ const data = useSelector((store) => store.example.product)
+ const dispatch = useDispatch()
 
-const Poroduct = ({data}) => { 
   useEffect(()=>{
     AllHandlerFn()
   } ,[])
@@ -131,13 +135,15 @@ const [price , setPrice] = useState(500)
               { val.length ? val.map((items) =>{
                 return(
                  <div 
-                  onClick={() => cardClickhandler(items.id)}
                  key={items.id} className="max-w-[250px] bg-white rounded-lg shadow-md p-4">
-                    <img src={items.image} alt={"This is an image of " + items.title} className="w-full h-40 object-cover rounded-md"/>
-                    <h1 className="mt-2 text-lg font-semibold text-gray-800">{items.title}</h1>
+                    <img onClick={() => cardClickhandler(items.id)} 
+                      src={items.image} alt={"This is an image of " + items.title} className="w-full h-40 object-cover rounded-md"/>
+                    <h1 onClick={() => cardClickhandler(items.id)}
+                      className="mt-2 text-lg font-semibold text-gray-800">{items.title}</h1>
                     <h1 className="text-gray-600">${items.price}</h1>
                     <h1 className="text-yellow-500">⭐ {items.rating} / 5</h1>
-                    <button className="mt-3 w-full bg-[#0858A9] text-white py-2 rounded-xl hover:bg-blue-700 transition"> Add to Cart</button>
+                    <button onClick={()=>{(dispatch(addToCart({id : items.id , title : items.title , price : items.price , image : items.image})))}}
+                    className="mt-3 w-full bg-[#0858A9] text-white py-2 rounded-xl hover:bg-blue-700 transition"> Add to Cart</button>
                   </div> 
                 )
               }) : <h1 className='font-bold text-3xl text-gray-500 mt-5 justify-center'>No Product</h1>
