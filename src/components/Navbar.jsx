@@ -12,7 +12,7 @@ const Navbar = () => {
   const filteredProducts = productData.filter(item =>
   item.title.toLowerCase().includes(searchText.toLowerCase())
   );
-  console.log(filteredProducts)
+
   let countOfQuantity = 0
   for(let item of data){
     countOfQuantity += item.quantity
@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className='bg-[#0858A8] flex justify-between text-white h-[10vh] items-center p-10 '>
-        <div className='text-4xl'>
+        <div className='md:text-3xl text-2xl lg:text-4xl'>
         <h1>Logo</h1>
         </div>
 

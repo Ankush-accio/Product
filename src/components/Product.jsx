@@ -65,18 +65,28 @@ const [price , setPrice] = useState(500)
           <div className="bg-[#0858A9] text-white rounded-2xl p-4 w-full md:w-[250px]">
         <h2 className="text-2xl mb-4">Filters</h2>
 
+
         <div className="mb-6">
-          <h3 className="mb-2 text-xl">Category</h3>
-
-          <div className="flex flex-col gap-2">
-
-            <label><input onClick={AllHandlerFn} type="radio" name="category"   defaultChecked /> All</label>
-            <label><input onClick={ElecHandlerFn} type="radio" name="category"   /> Electronics</label>
-            <label><input onClick={ClothHandlerFn} type="radio" name="category"   /> Clothing</label>
-            <label><input onClick={HomeHandlerFn} type="radio" name="category"   /> Home</label>
-
-          </div>
+        <div className="flex flex-col gap-2 text-white text-sm sm:text-base">
+          <label className="flex items-center gap-2">
+            <input onClick={AllHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            All
+          </label>
+          <label className="flex items-center gap-2">
+            <input onClick={ElecHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            Electronics
+          </label>
+          <label className="flex items-center gap-2">
+            <input onClick={ClothHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            Clothing
+          </label>
+          <label className="flex items-center gap-2">
+            <input onClick={HomeHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            Home
+          </label>
         </div>
+      </div>
+
 
         <div>
           <h3 className="mb-2">Price</h3>
@@ -99,16 +109,27 @@ const [price , setPrice] = useState(500)
          <div className="bg-[#FFFFFF] rounded-2xl p-4 w-full md:w-[250px] mt-5">
         <h2 className="text-2xl mb-4">Cacyroy</h2>
 
+
         <div className="mb-6">
-          <div className="flex flex-col gap-2">
-
-            <label><input onClick={AllHandlerFn} type="radio" name="category"  /> All</label>
-            <label><input onClick={ElecHandlerFn} type="radio" name="category" /> Electronics</label>
-            <label><input onClick={ClothHandlerFn} type="radio" name="category" /> Clothing</label>
-            <label><input onClick={HomeHandlerFn} type="radio" name="category" /> Home</label>
-
-          </div>
+        <div className="flex flex-col gap-2  text-sm sm:text-base">
+          <label className="flex items-center gap-2">
+            <input onClick={AllHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            All
+          </label>
+          <label className="flex items-center gap-2">
+            <input onClick={ElecHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            Electronics
+          </label>
+          <label className="flex items-center gap-2">
+            <input onClick={ClothHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            Clothing
+          </label>
+          <label className="flex items-center gap-2">
+            <input onClick={HomeHandlerFn} type="radio" name="category" className="accent-blue-500" />
+            Home
+          </label>
         </div>
+      </div>
 
         <div>
           <h3 className="mb-2">Price</h3>
@@ -129,7 +150,7 @@ const [price , setPrice] = useState(500)
         </div>
 
 
-        <div className='right p-5 pt-10 overflow-auto'>
+        <div className='right p-5 pt-10 overflow-auto w-full'>
           <h1 className='text-3xl font-bold'>Product Listing</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
               { val.length ? val.map((items) =>{
